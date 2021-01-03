@@ -8,7 +8,7 @@ const path = require("path");
 
 const app = express();
 const PORT = process.env.PORT || 8000;
-const host = "0.0.0.0";
+//const host = "0.0.0.0";
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
@@ -23,4 +23,4 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
 
-app.listen(PORT, host, () => console.log(`Server running on port ${PORT}`));
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
