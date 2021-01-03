@@ -7,7 +7,7 @@ const articleRouter = require("./routes/article-router");
 const path = require("path");
 
 const app = express();
-const apiPort = process.env.APIPORT || 8001;
+const apiPort = process.env.APIPORT || 8000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
