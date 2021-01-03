@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:8001/api",
+  baseURL: "http://localhost:" + process.env.PORT + "/api",
 });
 
 export const insertArticle = (payload) => api.post(`/article`, payload);
