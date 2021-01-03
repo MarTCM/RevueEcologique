@@ -1,9 +1,7 @@
 import axios from "axios";
 
-const PORT = process.env.PORT;
-
 const api = axios.create({
-  baseURL: `http://localhost:${PORT}/api`,
+  baseURL: `https://revue-ecologique-tc1.herokuapp.com/api`,
 });
 
 export const insertArticle = (payload) => api.post(`/article`, payload);
