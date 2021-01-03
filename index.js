@@ -7,6 +7,8 @@ const articleRouter = require("./routes/article-router");
 const path = require("path");
 
 const app = express();
+const PORT = process.env.PORT || 8000;
+const host = "0.0.0.0";
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
@@ -21,6 +23,4 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client", "build", "index.html"));
 });
 
-app.listen(process.env.PORT || 8000, () =>
-  console.log(`Server running on port ${process.env.PORT || 8000}`)
-);
+app.listen(PORT, host, () => console.log(`Server running on port ${PORT}`));
