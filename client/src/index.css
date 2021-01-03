@@ -1,0 +1,26 @@
+@font-face {
+  font-family: "Roboto";
+  src: local("Roboto"), url(./fonts/Roboto-Light.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto-Bold";
+  src: local("Roboto-Bold"), url(./fonts/Roboto-Regular.ttf) format("truetype");
+}
+
+.Roboto {
+  font-family: Roboto;
+}
+
+.Roboto-Bold {
+  font-family: Roboto-Bold;
+}
+
+.bg1 {
+  background-image: url("./backgrounds/background1.jpg");
+  color: white;
+}
+
+.white-color {
+  color: white;
+}
