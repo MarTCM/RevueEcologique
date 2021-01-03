@@ -7,7 +7,7 @@ const articleRouter = require("./routes/article-router");
 const path = require("path");
 
 const app = express();
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 8080;
 //const host = "0.0.0.0";
 
 app.use(bodyParser.urlencoded({ extended: true }));
