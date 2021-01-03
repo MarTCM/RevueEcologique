@@ -1,6 +1,6 @@
 import axios from "axios";
 
-PORT = process.env.PORT;
+const PORT = process.env.PORT;
 
 const api = axios.create({
   baseURL: `http://localhost:${PORT}/api`,
