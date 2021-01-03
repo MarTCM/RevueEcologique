@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { useHistory } from "react-router-dom";
 import LoginButton from "./common/LoginButton";
 import LogoutButton from "./common/LogoutButton";
 

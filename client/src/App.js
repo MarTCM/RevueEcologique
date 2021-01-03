@@ -7,7 +7,7 @@ import Admin from "./components/admin";
 import ArticleForm from "./components/articleForm";
 
 function App() {
-  const { loginWithRedirect, isAuthenticated, user } = useAuth0();
+  const { isAuthenticated, user } = useAuth0();
   return (
     <div>
       <Navbar />

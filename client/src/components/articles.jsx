@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import _, { range } from "lodash";
+import _ from "lodash";
 import Pagination from "./common/pagination";
 import { paginate } from "../utils/paginate";
 import api from "../api";
-import { BsClockHistory } from "react-icons/bs";
 
 class Articles extends Component {
   state = {
