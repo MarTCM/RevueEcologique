@@ -29,10 +29,13 @@ class ArticleForm extends Component {
 
   render() {
     return (
-      <div className="container m-2">
-        <h1 style={{ fontSize: 60, padding: 80 }}>{this.state.titre}</h1>
+      <div className="container m-6">
+        <h1 className="Lora-Medium" style={{ fontSize: 60, padding: 80 }}>
+          {this.state.titre}
+        </h1>
         <div className="jumbotron m-4">
           <p
+            className="Lora-Regular"
             id="paragraphe"
             style={{ fontSize: 30, paddingRight: 90, paddingLeft: 100 }}
             dangerouslySetInnerHTML={{ __html: atob(this.state.paragraphe) }}

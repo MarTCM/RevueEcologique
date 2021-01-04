@@ -8,12 +8,30 @@
   src: local("Roboto-Bold"), url(./fonts/Roboto-Regular.ttf) format("truetype");
 }
 
+@font-face {
+  font-family: "Lora-Regular";
+  src: local("Lora-Regular"), url(./fonts/Lora-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Lora-Medium";
+  src: local("Lora-Medium"), url(./fonts/Lora-Medium.ttf) format("truetype");
+}
+
 .Roboto {
   font-family: Roboto;
 }
 
 .Roboto-Bold {
   font-family: Roboto-Bold;
+}
+
+.Lora-Regular {
+  font-family: Lora-Regular;
+}
+
+.Lora-Medium {
+  font-family: Lora-Medium;
 }
 
 .bg1 {
