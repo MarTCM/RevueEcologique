@@ -9,7 +9,11 @@ class Navbar extends Component {
       <div className="Roboto">
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
           <Link className="navbar-brand navbar-header Roboto-Bold" to="#">
-            Revue Ecologique
+            <img
+              src="https://gsalbayane.ma/wp-content/uploads/2020/06/cropped-36566514_187674361925018_2535644585846112256_n-180x180.png"
+              width="45"
+            />
+            La Revue Ecologique
           </Link>
 
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
