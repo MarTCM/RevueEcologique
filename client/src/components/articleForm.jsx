@@ -29,10 +29,24 @@ class ArticleForm extends Component {
 
   render() {
     return (
-      <div className="container m-6">
-        <h1 className="Lora-Medium" style={{ fontSize: 60, padding: 80 }}>
+      <div className="container">
+        <h1
+          className="Lora-Medium"
+          style={{ fontSize: 60, paddingTop: 85, paddingLeft: 90 }}
+        >
           {this.state.titre}
         </h1>
+        <p
+          style={{
+            paddingLeft: 130,
+            fontFamily: "Lora-Italic",
+            fontSize: 20,
+            paddingBottom: 30,
+          }}
+        >
+          Réalisé par {this.state.auteur}
+        </p>
+        <hr />
         <div className="jumbotron m-4">
           <p
             className="Lora-Regular"
