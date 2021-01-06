@@ -6,7 +6,7 @@ const Profile = () => {
   return (
     <div
       className="jumbotron center Lora-Medium"
-      style={{ backgroundColor: "white" }}
+      style={{ backgroundColor: "white", paddingTop: 30 }}
     >
       <p style={{ fontSize: 50 }}>Profile</p>
       <hr />
