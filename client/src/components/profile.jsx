@@ -18,6 +18,8 @@ const Profile = () => {
             paddingLeft: 20,
             paddingTop: 15,
             marginBottom: 25,
+            paddingRight: 190,
+            display: "inline",
           }}
         >
           Photo de profil:
@@ -29,8 +31,8 @@ const Profile = () => {
             width: 64,
             height: 64,
             display: "block",
-            float: "right",
-            marginRight: 480,
+
+            display: "inline",
           }}
           alt=""
         />
@@ -42,7 +44,7 @@ const Profile = () => {
           {user.name}
         </label>
         <br />
-        <label style={{ fontSize: 20, marginRight: 265, paddingLeft: 20 }}>
+        <label style={{ fontSize: 20, marginRight: 267, paddingLeft: 20 }}>
           Email:
         </label>
         <label className="center" style={{ fontSize: 20 }}>
