@@ -4,6 +4,7 @@ import Home from "./components/home";
 import Navbar from "./components/navbar";
 import Articles from "./components/articles";
 import Admin from "./components/admin";
+import Profile from "./components/profile";
 import ArticleForm from "./components/articleForm";
 
 function App() {
@@ -18,8 +19,17 @@ function App() {
           <Route
             path="/admin"
             render={(props) => {
-              if (isAuthenticated && user["https://rbac/role"] === "admin")
+              if (isAuthenticated && user["https://rbac/role"] === "Admin")
                 return <Admin {...props} />;
+              return <Redirect to="/" />;
+            }}
+          />
+          <Route
+            path="/profile"
+            render={(props) => {
+              if (isAuthenticated) {
+                return <Profile {...props} />;
+              }
               return <Redirect to="/" />;
             }}
           />

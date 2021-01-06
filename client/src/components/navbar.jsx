@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import LoginButton from "./common/LoginButton";
-import Profile from "./profile";
+import UserBar from "./userbar";
 
 class Navbar extends Component {
   render() {
@@ -43,7 +43,7 @@ class Navbar extends Component {
             </div>
           </div>
           <LoginButton />
-          <Profile />
+          <UserBar />
         </nav>
       </div>
     );
