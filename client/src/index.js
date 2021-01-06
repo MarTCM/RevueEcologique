@@ -5,6 +5,7 @@ import { Auth0Provider } from "@auth0/auth0-react";
 import App from "./App";
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/js/bootstrap.js";
 import "./fonts/Roboto-Light.ttf";
 
 const domain = process.env.REACT_APP_AUTH0_DOMAIN;

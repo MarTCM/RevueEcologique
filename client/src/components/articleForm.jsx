@@ -1,4 +1,3 @@
-import { get } from "lodash";
 import React, { Component } from "react";
 import api from "../api";
 

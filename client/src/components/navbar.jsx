@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import LoginButton from "./common/LoginButton";
-import LogoutButton from "./common/LogoutButton";
+import Profile from "./profile";
 
 class Navbar extends Component {
   render() {
@@ -12,6 +12,7 @@ class Navbar extends Component {
             <img
               src="https://gsalbayane.ma/wp-content/uploads/2020/06/cropped-36566514_187674361925018_2535644585846112256_n-180x180.png"
               width="45"
+              alt=""
             />
             La Revue Ecologique
           </Link>
@@ -42,7 +43,7 @@ class Navbar extends Component {
             </div>
           </div>
           <LoginButton />
-          <LogoutButton />
+          <Profile />
         </nav>
       </div>
     );
