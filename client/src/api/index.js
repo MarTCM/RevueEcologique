@@ -1,9 +1,7 @@
 import axios from "axios";
 
-const base_url = process.env.API_BASE_URL;
-
 const api = axios.create({
-  baseURL: base_url,
+  baseURL: "https://revue-ecologique-tc1.herokuapp.com/api",
 });
 
 export const insertArticle = (payload) => api.post(`/article`, payload);
