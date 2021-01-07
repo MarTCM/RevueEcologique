@@ -1,7 +1,10 @@
 import axios from "axios";
+require("dotenv").config();
+
+const url = process.env.API_BASE_URL;
 
 const api = axios.create({
-  baseURL: "https://revue-ecologique-tc1.herokuapp.com/api",
+  baseURL: url,
 });
 
 export const insertArticle = (payload) => api.post(`/article`, payload);
