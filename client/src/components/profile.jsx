@@ -30,8 +30,6 @@ const Profile = () => {
             borderRadius: "50%",
             width: 64,
             height: 64,
-            display: "block",
-
             display: "inline",
           }}
           alt=""
