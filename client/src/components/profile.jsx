@@ -8,7 +8,7 @@ const Profile = () => {
       className="jumbotron center Lora-Medium"
       style={{ backgroundColor: "white", paddingTop: 30 }}
     >
-      <p style={{ fontSize: 50 }}>Profile</p>
+      <p style={{ fontSize: 50 }}>Profil</p>
       <hr />
       <div>
         <label

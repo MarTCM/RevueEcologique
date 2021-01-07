@@ -35,7 +35,7 @@ const UserBar = () => {
           aria-labelledby="dropdownMenu2"
         >
           <Link className="dropdown-item" to="/profile">
-            Profile
+            Profil
           </Link>
           <div className="dropdown-divider" />
           <button
