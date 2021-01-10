@@ -10,7 +10,7 @@ import ArticleForm from "./components/articleForm";
 import Mobile from "./components/mobile";
 
 function App() {
-  const { isAuthenticated, user } = useAuth0();
+  const { isAuthenticated, user, loginWithRedirect } = useAuth0();
   if (!isMobile) {
     return (
       <div>
@@ -24,7 +24,7 @@ function App() {
               render={(props) => {
                 if (isAuthenticated && user["https://rbac/role"] === "Admin")
                   return <Admin {...props} />;
-                return <Redirect to="/" />;
+                return loginWithRedirect();
               }}
             />
             <Route
@@ -33,7 +33,7 @@ function App() {
                 if (isAuthenticated) {
                   return <Profile {...props} />;
                 }
-                return <Redirect to="/" />;
+                return loginWithRedirect();
               }}
             />
             <Route path="/" component={Home} />

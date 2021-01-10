@@ -17,7 +17,7 @@ class Navbar extends Component {
             La Revue Ecologique
           </Link>
 
-          <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div className=" navbar-collapse">
             <div className="navbar-nav">
               <Link
                 className="nav-item nav-link"

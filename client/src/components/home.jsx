@@ -4,7 +4,10 @@ class Home extends Component {
   render() {
     return (
       <main>
-        <div className="container-fluid jumbotron text-center bg1">
+        <div
+          className="container-fluid jumbotron text-center bg1"
+          style={{ borderRadius: 0 }}
+        >
           <h1>
             <b>Vous consultez maintenant la revue écologique!</b>
           </h1>
