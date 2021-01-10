@@ -1,13 +1,13 @@
 import { Route, Switch, Redirect } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import { isMobile } from "react-device-detect";
-import Home from "./components/home";
-import Navbar from "./components/navbar";
-import Articles from "./components/articles";
-import Admin from "./components/admin";
-import Profile from "./components/profile";
-import ArticleForm from "./components/articleForm";
-import Mobile from "./components/mobile";
+import Home from "./components/pages/home";
+import Navbar from "./components/common/navbar";
+import Articles from "./components/pages/article-stuff/articles";
+import Admin from "./components/admin/admin";
+import Profile from "./components/user/profile";
+import ArticleForm from "./components/pages/article-stuff/articlePage";
+import Mobile from "./components/pages/mobile";
 
 function App() {
   const { isAuthenticated, user, loginWithRedirect } = useAuth0();

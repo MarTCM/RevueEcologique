@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import AddArticle from "./admin/addArticle";
-import DeleteArticle from "./admin/deleteArticle";
-import UpdateArticle from "./admin/updateArticle";
+import AddArticle from "./addArticle";
+import DeleteArticle from "./deleteArticle";
+import UpdateArticle from "./updateArticle";
 
 class Admin extends Component {
   render() {

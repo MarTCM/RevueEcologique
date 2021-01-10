@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import _ from "lodash";
-import Pagination from "./common/pagination";
-import { paginate } from "../utils/paginate";
-import api from "../api";
+import Pagination from "../../common/pagination/pagination";
+import { paginate } from "../../common/pagination/paginate";
+import api from "../../../api";
 
 class Articles extends Component {
   state = {

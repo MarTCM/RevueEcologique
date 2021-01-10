@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import LoginButton from "./common/LoginButton";
-import UserBar from "./userbar";
+import LoginButton from "./AuthButtons/LoginButton";
+import UserBar from "../user/userbar";
 
 class Navbar extends Component {
   render() {
