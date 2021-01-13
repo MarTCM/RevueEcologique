@@ -14,7 +14,7 @@ const UserBar = () => {
           data-toggle="dropdown"
           aria-haspopup="true"
           aria-expanded="false"
-          style={{ color: "white", fontSize: 20 }}
+          style={{ color: "black", fontSize: 20 }}
         >
           <img
             style={{

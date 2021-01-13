@@ -7,7 +7,7 @@ class Navbar extends Component {
   render() {
     return (
       <div className="Roboto">
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <Link className="navbar-brand navbar-header Roboto-Bold" to="#">
             <img
               src="https://gsalbayane.ma/wp-content/uploads/2020/06/cropped-36566514_187674361925018_2535644585846112256_n-180x180.png"
