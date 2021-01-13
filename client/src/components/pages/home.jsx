@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import { Parallax, Background } from "react-parallax";
+import { Parallax } from "react-parallax";
 
 const image1 =
   "https://sleeksearch.s3.amazonaws.com/u/udb/16/44/d1/9d/66765/1450095412/full-hd-nature-wallpapers-free-downloads-for-laptop-14.jpg";
 
-const map = `<div style="width: 100%"><iframe width="100%" height="450" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=GS%20Albayane+(GS%20AlBayane)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe></div>`;
+const map = `<div style="width: 100%"><iframe width="100%" height="485" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=GS%20Albayane+(GS%20AlBayane)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe></div>`;
 
 class Home extends Component {
   iframe = () => {
@@ -54,7 +54,7 @@ class Home extends Component {
           }}
         >
           <div
-            className="jumbotron text-cente"
+            className="jumbotron"
             style={{
               marginTop: 200,
               width: 500,
@@ -62,11 +62,16 @@ class Home extends Component {
             }}
           >
             <h1
-              style={{ textAlign: "left", paddingLeft: 20, paddingBottom: 30 }}
+              style={{
+                textAlign: "left",
+                paddingLeft: 10,
+                fontSize: 45,
+              }}
             >
               À propos
             </h1>
-            <p>
+            <hr style={{ paddingBottom: 15 }} />
+            <p style={{ fontSize: 20 }}>
               Ce site est une magazine écologique rédigée primairement par les
               élèves du TCS1 du GS AlBayane. GS AlBayane est une école privée
               situé à l'Av Tarik Ibn Ziad Hay Al Moustakbal Al Badil, comme le
@@ -77,8 +82,8 @@ class Home extends Component {
           </div>
           <div
             style={{
-              width: 450,
-              marginTop: 175,
+              width: 485,
+              marginTop: 200,
             }}
           >
             <div dangerouslySetInnerHTML={this.iframe()} />
