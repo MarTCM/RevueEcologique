@@ -1,16 +1,41 @@
 import React, { Component } from "react";
 import { Parallax } from "react-parallax";
+import { Slide } from "react-slideshow-image";
+import { Link } from "react-router-dom";
+import api from "../../api/index";
+import "react-slideshow-image/dist/styles.css";
 
 const image1 =
   "https://sleeksearch.s3.amazonaws.com/u/udb/16/44/d1/9d/66765/1450095412/full-hd-nature-wallpapers-free-downloads-for-laptop-14.jpg";
 
+const fadeImages = [
+  "https://www.actu-environnement.com/images/illustrations/news/31913_large.jpg",
+  "https://youmatter.world/app/uploads/sites/3/2018/08/ecologie-solutions.jpg",
+  "https://lh3.googleusercontent.com/proxy/oxj4vX8cNfQJj_VRA2mdRkSdbj-gZqGv0rFbcUromPKSCZZaNuTxcwWUjfUUHxPlG-J74hQvjSkHyMI2uxIXiWqBdkhwQPIsu2kmc-BgGf3q_H2uYmYyxMcud_Z64x82",
+];
+
+const fadeProperties = {
+  duration: 3000,
+  pauseOnHover: true,
+};
+
 const map = `<div style="width: 100%"><iframe width="100%" height="485" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=GS%20Albayane+(GS%20AlBayane)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe></div>`;
 
 class Home extends Component {
+  state = { articles: [] };
+
   iframe = () => {
     return {
       __html: map,
     };
+  };
+
+  componentDidMount = async () => {
+    await api.getAllArticles().then((articles) => {
+      this.setState({
+        articles: articles.data.data,
+      });
+    });
   };
 
   render() {
@@ -22,7 +47,7 @@ class Home extends Component {
               className="container-fluid text-center flex-centered white-color"
               style={{
                 borderRadius: 0,
-                height: 600,
+                height: 675,
                 paddingBottom: 70,
               }}
             >
@@ -36,7 +61,7 @@ class Home extends Component {
         </div>
         <div
           className="container text-center jumbotron m-6"
-          style={{ marginTop: 60, borderRadius: 10 }}
+          style={{ borderRadius: 10, marginTop: 60, marginBottom: 200 }}
         >
           <h2>
             <i>
@@ -45,6 +70,30 @@ class Home extends Component {
               supervision de notre prof de SVT.
             </i>
           </h2>
+        </div>
+        <div>
+          <div
+            className="slide-container"
+            style={{ height: 500, marginBottom: 60 }}
+          >
+            <Slide {...fadeProperties}>
+              {this.state.articles.map((article) => (
+                <div className="each-fade">
+                  <div>
+                    <img src={article.imgLink} />
+                  </div>
+                  <p>
+                    <Link
+                      style={{ color: "#FFF" }}
+                      to={`/articles/${article._id}`}
+                    >
+                      {article.titre}
+                    </Link>
+                  </p>
+                </div>
+              ))}
+            </Slide>
+          </div>
         </div>
         <div
           style={{
@@ -62,6 +111,7 @@ class Home extends Component {
             }}
           >
             <h1
+              className="Roboto-Bold"
               style={{
                 textAlign: "left",
                 paddingLeft: 10,
@@ -71,7 +121,7 @@ class Home extends Component {
               À propos
             </h1>
             <hr style={{ paddingBottom: 15 }} />
-            <p style={{ fontSize: 20 }}>
+            <p style={{ fontSize: 20 }} className="Roboto">
               Ce site est une magazine écologique rédigée primairement par les
               élèves du TCS1 du GS AlBayane. GS AlBayane est une école privée
               situé à l'Av Tarik Ibn Ziad Hay Al Moustakbal Al Badil, comme le

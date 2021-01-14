@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import api from "../../api";
 
 class UpdateArticle extends Component {
-  state = { article: { id: "", titre: "", paragraphe: "", auteur: "" } };
+  state = {
+    article: { id: "", titre: "", paragraphe: "", auteur: "", imgLink: "" },
+  };
 
   handleChange = ({ currentTarget: input }) => {
     const article = { ...this.state.article };
@@ -12,8 +14,8 @@ class UpdateArticle extends Component {
 
   handleUpdateArticle = async (e) => {
     e.preventDefault();
-    const { id, titre, paragraphe, auteur } = this.state.article;
-    const payload = { titre, paragraphe, auteur };
+    const { id, titre, paragraphe, auteur, imgLink } = this.state.article;
+    const payload = { titre, paragraphe, auteur, imgLink };
 
     await api.updateArticleById(id, payload).then((res) => {
       window.alert(`Article updated successfully`);
@@ -22,6 +24,7 @@ class UpdateArticle extends Component {
         titre: "",
         paragraphe: "",
         auteur: "",
+        imgLink: "",
       });
     });
   };
@@ -32,7 +35,7 @@ class UpdateArticle extends Component {
         className="container m-3 jumbotron"
         style={{
           width: 350,
-          height: 500,
+          height: 575,
           paddingTop: 20,
           float: "left",
         }}
@@ -79,6 +82,17 @@ class UpdateArticle extends Component {
               onChange={this.handleChange}
               id="auteur"
               name="auteur"
+              type="text"
+              className="form-control"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="imgLink">Image de face</label>
+            <input
+              value={this.state.imgLink}
+              onChange={this.handleChange}
+              id="imgLink"
+              name="imgLink"
               type="text"
               className="form-control"
             />

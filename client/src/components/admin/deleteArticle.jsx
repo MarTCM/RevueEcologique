@@ -28,7 +28,7 @@ class DeleteArticle extends Component {
         className="container m-3 jumbotron"
         style={{
           width: 350,
-          height: 500,
+          height: 575,
           paddingTop: 20,
           float: "left",
         }}

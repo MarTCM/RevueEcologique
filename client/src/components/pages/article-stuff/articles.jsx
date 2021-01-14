@@ -50,7 +50,10 @@ class Articles extends Component {
     );
 
     return (
-      <div className="container m-5" style={{ fontSize: 19 }}>
+      <div
+        className="container"
+        style={{ fontSize: 19, marginTop: 75, alignItems: "center" }}
+      >
         <h3 className="m-3">
           Affichage de {this.state.articles.length} articles.
         </h3>

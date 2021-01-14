@@ -3,7 +3,7 @@ import api from "../../api";
 
 class AddArticle extends Component {
   state = {
-    article: { titre: "", paragraphe: "", auteur: "" },
+    article: { titre: "", paragraphe: "", auteur: "", imgLink: "" },
   };
 
   handleChange = ({ currentTarget: input }) => {
@@ -14,8 +14,8 @@ class AddArticle extends Component {
 
   handleIncludeArticle = async (e) => {
     e.preventDefault();
-    const { titre, paragraphe, auteur } = this.state.article;
-    const payload = { titre, paragraphe, auteur };
+    const { titre, paragraphe, auteur, imgLink } = this.state.article;
+    const payload = { titre, paragraphe, auteur, imgLink };
 
     await api.insertArticle(payload).then((res) => {
       window.alert(`Article inserted successfully`);
@@ -23,6 +23,7 @@ class AddArticle extends Component {
         titre: "",
         paragraphe: "",
         auteur: "",
+        imgLink: "",
       });
     });
   };
@@ -31,7 +32,7 @@ class AddArticle extends Component {
     return (
       <div
         className="container m-3 jumbotron"
-        style={{ width: 350, height: 500, paddingTop: 20, float: "left" }}
+        style={{ width: 350, height: 575, paddingTop: 20, float: "left" }}
       >
         <h2 className="Roboto-Bold m-3">Add Article</h2>
         <form className="m-3" onSubmit={this.handleIncludeArticle}>
@@ -65,6 +66,17 @@ class AddArticle extends Component {
               onChange={this.handleChange}
               id="auteur"
               name="auteur"
+              type="text"
+              className="form-control"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="imgLink">Image de face</label>
+            <input
+              value={this.state.imgLink}
+              onChange={this.handleChange}
+              id="imgLink"
+              name="imgLink"
               type="text"
               className="form-control"
             />

@@ -53,7 +53,6 @@ class ArticleForm extends Component {
             style={{ fontSize: 30, paddingRight: 90, paddingLeft: 100 }}
             dangerouslySetInnerHTML={{ __html: atob(this.state.paragraphe) }}
           ></p>
-          <img src={this.state.imgLink} alt="" style={{ paddingLeft: 100 }} />
         </div>
       </div>
     );

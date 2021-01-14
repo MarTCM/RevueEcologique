@@ -7,12 +7,11 @@ class Admin extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="container m-2" style={{}}>
+        <div className="container" style={{}}>
           <h2
             className="Roboto-Bold"
             style={{
               textAlign: "center",
-              paddingLeft: 440,
               paddingTop: 20,
               fontSize: 50,
             }}
@@ -20,7 +19,7 @@ class Admin extends Component {
             Admin Panel
           </h2>
         </div>
-        <div style={{ marginLeft: 225 }}>
+        <div style={{ display: "flex", justifyContent: "center" }}>
           <AddArticle />
           <UpdateArticle />
           <DeleteArticle />
