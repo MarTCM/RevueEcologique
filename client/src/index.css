@@ -67,25 +67,12 @@
 }
 
 .each-fade > div {
-  width: 75%;
-  height: 75%;
+  width: 100%;
+  height: 99%;
 }
 
 .each-fade > div img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.each-fade p {
-  width: 25%;
-  height: 75%;
-  font-size: 2em;
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  font-family: Roboto;
-  background: #259021;
 }

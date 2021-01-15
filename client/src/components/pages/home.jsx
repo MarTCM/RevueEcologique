@@ -8,12 +8,6 @@ import "react-slideshow-image/dist/styles.css";
 const image1 =
   "https://sleeksearch.s3.amazonaws.com/u/udb/16/44/d1/9d/66765/1450095412/full-hd-nature-wallpapers-free-downloads-for-laptop-14.jpg";
 
-const fadeImages = [
-  "https://www.actu-environnement.com/images/illustrations/news/31913_large.jpg",
-  "https://youmatter.world/app/uploads/sites/3/2018/08/ecologie-solutions.jpg",
-  "https://lh3.googleusercontent.com/proxy/oxj4vX8cNfQJj_VRA2mdRkSdbj-gZqGv0rFbcUromPKSCZZaNuTxcwWUjfUUHxPlG-J74hQvjSkHyMI2uxIXiWqBdkhwQPIsu2kmc-BgGf3q_H2uYmYyxMcud_Z64x82",
-];
-
 const fadeProperties = {
   duration: 3000,
   pauseOnHover: true,
@@ -74,22 +68,34 @@ class Home extends Component {
         <div>
           <div
             className="slide-container"
-            style={{ height: 500, marginBottom: 60 }}
+            style={{ height: 500, marginBottom: 60, margin: 50 }}
           >
             <Slide {...fadeProperties}>
               {this.state.articles.map((article) => (
                 <div className="each-fade">
-                  <div>
-                    <img src={article.imgLink} />
+                  <div
+                    style={{
+                      backgroundImage: `url(${article.imgLink})`,
+                      height: 500,
+                      backgroundSize: "cover",
+                      display: "flex",
+                      textAlign: "center",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      fontSize: 60,
+                      fontFamily: "Lora-Medium",
+                      margin: 0,
+                    }}
+                  >
+                    <p>
+                      <Link
+                        style={{ color: "#FFF" }}
+                        to={`/articles/${article._id}`}
+                      >
+                        {article.titre}
+                      </Link>
+                    </p>
                   </div>
-                  <p>
-                    <Link
-                      style={{ color: "#FFF" }}
-                      to={`/articles/${article._id}`}
-                    >
-                      {article.titre}
-                    </Link>
-                  </p>
                 </div>
               ))}
             </Slide>
