@@ -54,7 +54,7 @@ class Home extends Component {
           </Parallax>
         </div>
         <div
-          className="container text-center jumbotron m-6"
+          className="container text-center jumbotron m-6 shadow-1"
           style={{ borderRadius: 10, marginTop: 60, marginBottom: 200 }}
         >
           <h2>
@@ -67,7 +67,7 @@ class Home extends Component {
         </div>
         <div>
           <div
-            className="slide-container"
+            className="slide-container shadow-1"
             style={{ height: 500, marginBottom: 60, margin: 50 }}
           >
             <Slide {...fadeProperties}>
@@ -109,7 +109,7 @@ class Home extends Component {
           }}
         >
           <div
-            className="jumbotron"
+            className="jumbotron shadow"
             style={{
               marginTop: 200,
               width: 500,
@@ -142,7 +142,7 @@ class Home extends Component {
               marginTop: 200,
             }}
           >
-            <div dangerouslySetInnerHTML={this.iframe()} />
+            <div className="shadow" dangerouslySetInnerHTML={this.iframe()} />
           </div>
         </div>
       </main>

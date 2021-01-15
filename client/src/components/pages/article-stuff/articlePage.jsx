@@ -46,7 +46,12 @@ class ArticleForm extends Component {
           Réalisé par {this.state.auteur}
         </p>
         <hr />
-        <div className="jumbotron m-4">
+        <div
+          className="jumbotron m-4 shadow-1"
+          style={{
+            borderRadius: 0,
+          }}
+        >
           <p
             className="Lora-Regular"
             id="paragraphe"
