@@ -2,7 +2,7 @@ import axios from "axios";
 
 //used secret env var to secure api endpoints
 const api = axios.create({
-  baseURL: `https://revue-ecologique-tc1.herokuapp.com/${process.env.REACT_APP_AUTH0_CLIENT_ID}/api`,
+  baseURL: `https://revue-ecologique-tc1.herokuapp.com/${process.env.REACT_APP_AUTH0_CLIENT_SECRET}/api`,
 });
 
 export const insertArticle = (payload) => api.post(`/article`, payload);

@@ -16,7 +16,7 @@ app.use(express.static(path.join(__dirname, "client", "build")));
 
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
 
-app.use(`/${process.env.REACT_APP_AUTH0_CLIENT_ID}/api`, articleRouter);
+app.use(`/${process.env.REACT_APP_AUTH0_CLIENT_SECRET}/api`, articleRouter);
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "client", "build", "index.html"));
