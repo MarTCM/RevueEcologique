@@ -31,7 +31,7 @@ class AddArticle extends Component {
   render() {
     return (
       <div
-        className="container m-3 jumbotron"
+        className="container m-3 jumbotron shadow"
         style={{ width: 350, height: 575, paddingTop: 20, float: "left" }}
       >
         <h2 className="Roboto-Bold m-3">Add Article</h2>

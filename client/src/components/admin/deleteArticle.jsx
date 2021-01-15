@@ -25,7 +25,7 @@ class DeleteArticle extends Component {
   render() {
     return (
       <div
-        className="container m-3 jumbotron"
+        className="container m-3 jumbotron shadow"
         style={{
           width: 350,
           height: 575,

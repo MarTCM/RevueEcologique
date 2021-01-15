@@ -51,8 +51,14 @@ class Articles extends Component {
 
     return (
       <div
-        className="container"
-        style={{ fontSize: 19, marginTop: 75, alignItems: "center" }}
+        className="container shadow"
+        style={{
+          fontSize: 19,
+          marginTop: 75,
+          paddingTop: 20,
+          paddingBottom: 10,
+          alignItems: "center",
+        }}
       >
         <h3 className="m-3">
           Affichage de {this.state.articles.length} articles.
