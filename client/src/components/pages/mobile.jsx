@@ -11,7 +11,7 @@ class Mobile extends Component {
           Vous utilisez un appareil mobile? Télécharger l'application Revue
           Ecologique pour android.
         </div>
-        <form action="https://exp-shell-app-assets.s3.us-west-1.amazonaws.com/android/%40martcm/RevueEcologiqueMobile-d829df42bc1e40a99663dfcfb2f87c16-signed.apk">
+        <form action="https://exp-shell-app-assets.s3.us-west-1.amazonaws.com/android/%40martcm/RevueEcologiqueMobile-5f9745aeb0fd47fcaa59c9cb0f675163-signed.apk">
           <button className="btn btn-success" type="submit">
             Télécharger
           </button>
