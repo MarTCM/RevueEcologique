@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import api from "../../../api";
+import { authors } from "./authors";
 
 class ArticleForm extends Component {
   constructor(props) {
@@ -11,6 +12,7 @@ class ArticleForm extends Component {
       paragraphe: "",
       imgLink: "",
       auteur: "",
+      pfp: "",
     };
   }
 
@@ -24,6 +26,19 @@ class ArticleForm extends Component {
       imgLink: article.data.data.imgLink,
       auteur: article.data.data.auteur,
     });
+
+    this.pfp();
+  };
+
+  pfp = () => {
+    if (authors.some((e) => e.name === this.state.auteur)) {
+      const author = authors.filter((e) => e.name === this.state.auteur);
+      this.setState({ pfp: author[0].pfp });
+    } else {
+      this.setState({
+        pfp: "http://legacy.ukla.org/images/icons/user-icon.svg",
+      });
+    }
   };
 
   render() {
@@ -39,11 +54,19 @@ class ArticleForm extends Component {
           style={{
             paddingLeft: 130,
             fontFamily: "Lora-Italic",
-            fontSize: 20,
+            fontSize: 22,
             paddingBottom: 30,
           }}
         >
           Réalisé par {this.state.auteur}
+          <img
+            src={this.state.pfp}
+            style={{
+              height: 45,
+              marginLeft: 5,
+              borderRadius: 50,
+            }}
+          />
         </p>
         <hr />
         <div
