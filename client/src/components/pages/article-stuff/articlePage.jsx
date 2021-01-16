@@ -36,7 +36,8 @@ class ArticleForm extends Component {
       this.setState({ pfp: author[0].pfp });
     } else {
       this.setState({
-        pfp: "http://legacy.ukla.org/images/icons/user-icon.svg",
+        pfp:
+          "https://thumbs.dreamstime.com/b/default-avatar-profile-image-vector-social-media-user-icon-potrait-182347582.jpg",
       });
     }
   };
