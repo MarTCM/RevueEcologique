@@ -5,8 +5,7 @@ import { Link } from "react-router-dom";
 import api from "../../api/index";
 import "react-slideshow-image/dist/styles.css";
 
-const image1 =
-  "https://sleeksearch.s3.amazonaws.com/u/udb/16/44/d1/9d/66765/1450095412/full-hd-nature-wallpapers-free-downloads-for-laptop-14.jpg";
+const image1 = "https://i.imgur.com/BSKSfOh.png";
 
 const fadeProperties = {
   duration: 3000,
@@ -45,7 +44,7 @@ class Home extends Component {
                 paddingBottom: 70,
               }}
             >
-              <h1>
+              <h1 style={{ fontSize: 50, textShadow: "1px 1px black" }}>
                 <b>Vous consultez maintenant la revue écologique!</b>
               </h1>
               <br />
