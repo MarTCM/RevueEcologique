@@ -12,6 +12,9 @@ class Articles extends Component {
     currentPage: 1,
     sortColumn: { path: "titre", order: "asc" },
     isLoading: false,
+    noArticle: false,
+    loadingMessage: "Chargement en cours des articles...",
+    noArticleMessage: "Il n'y a aucun article pour le moment",
   };
 
   componentDidMount = async () => {
@@ -23,6 +26,12 @@ class Articles extends Component {
         isLoading: false,
       });
     });
+
+    if (this.state.articles.length === 0) {
+      this.setState({
+        noArticle: true,
+      });
+    }
   };
 
   handlePageChange = (page) => {
@@ -34,8 +43,39 @@ class Articles extends Component {
   };
 
   render() {
-    if (this.state.articles.length === 0)
-      return <p>Il n'y a aucun article pour le moment!</p>;
+    if (this.state.articles.length === 0 && this.state.noArticle)
+      return (
+        <p
+          style={{
+            width: "100%",
+            height: 200,
+            textAlign: "center",
+            justifyContent: "center",
+            alignItems: "center",
+            display: "flex",
+            fontSize: 20,
+          }}
+        >
+          {this.state.noArticleMessage}
+        </p>
+      );
+    else if (this.state.articles.length === 0 && !this.state.noArticle) {
+      return (
+        <p
+          style={{
+            width: "100%",
+            height: 200,
+            textAlign: "center",
+            justifyContent: "center",
+            alignItems: "center",
+            display: "flex",
+            fontSize: 20,
+          }}
+        >
+          {this.state.loadingMessage}
+        </p>
+      );
+    }
 
     const sorted = _.orderBy(
       this.state.articles,

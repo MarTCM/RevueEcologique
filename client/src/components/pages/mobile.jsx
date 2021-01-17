@@ -5,15 +5,15 @@ class Mobile extends Component {
     return (
       <div className="text-center">
         <div
-          className="jumbotron"
+          className="jumbotron shadow"
           style={{ margin: 20, textAlign: "center", fontSize: 18 }}
         >
-          Vous utilisez un appareil mobile? Télécharger l'application Revue
-          Ecologique pour android.
+          Vous utilisez un appareil mobile? Télécharger l'application Expo sur
+          Play Store ou App Store puis clickez sur le lien ci-dessous.
         </div>
-        <form action="https://exp-shell-app-assets.s3.us-west-1.amazonaws.com/android/%40martcm/RevueEcologiqueMobile-b5ff728fbaa7479b8f13b1b40c03af99-signed.apk">
-          <button className="btn btn-success" type="submit">
-            Télécharger
+        <form action="https://expo.io/--/to-exp/exp%3A%2F%2Fexp.host%2F%40martcm%2FRevueEcologiqueMobile">
+          <button className="btn btn-success shadow" type="submit">
+            Ouvrir avec Expo
           </button>
         </form>
       </div>
