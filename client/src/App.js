@@ -8,6 +8,7 @@ import Admin from "./components/admin/admin";
 import Profile from "./components/user/profile";
 import ArticleForm from "./components/pages/article-stuff/articlePage";
 import Mobile from "./components/pages/mobile";
+import MyArticles from "./components/pages/article-stuff/myArticles";
 
 function App() {
   const { isAuthenticated, user, loginWithRedirect } = useAuth0();
@@ -17,6 +18,10 @@ function App() {
         <Navbar />
         <div>
           <Switch>
+            <Route
+              path="/myarticles"
+              render={(props) => <MyArticles {...props} user={user} />}
+            />
             <Route path="/articles/:id" component={ArticleForm} />
             <Route path="/articles" component={Articles} />
             <Route
@@ -31,6 +36,7 @@ function App() {
               path="/profile"
               render={(props) => {
                 if (isAuthenticated) {
+                  console.log(user.app_metadata);
                   return <Profile {...props} />;
                 }
                 return loginWithRedirect();

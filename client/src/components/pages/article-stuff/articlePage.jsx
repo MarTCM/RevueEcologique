@@ -62,6 +62,7 @@ class ArticleForm extends Component {
           Réalisé par {this.state.auteur}
           <img
             src={this.state.pfp}
+            alt=""
             style={{
               height: 45,
               marginLeft: 5,

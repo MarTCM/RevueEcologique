@@ -28,7 +28,7 @@ const UserBar = () => {
             src={user.picture}
             alt=""
           />
-          {user.given_name}
+          {user.name}
         </button>
         <div
           className="dropdown-menu dropdown-menu-right"
