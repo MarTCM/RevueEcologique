@@ -20,7 +20,14 @@ function App() {
           <Switch>
             <Route
               path="/myarticles"
-              render={(props) => <MyArticles {...props} user={user} />}
+              render={(props) => {
+                if (
+                  (isAuthenticated && user["https://rbac/role"] === "Auteur") ||
+                  "Admin"
+                )
+                  <MyArticles {...props} user={user} />;
+                return loginWithRedirect();
+              }}
             />
             <Route path="/articles/:id" component={ArticleForm} />
             <Route path="/articles" component={Articles} />
