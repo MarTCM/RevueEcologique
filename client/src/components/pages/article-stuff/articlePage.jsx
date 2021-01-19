@@ -75,6 +75,7 @@ class ArticleForm extends Component {
           className="jumbotron m-4 shadow-1"
           style={{
             borderRadius: 0,
+            backgroundColor: "white",
           }}
         >
           <p

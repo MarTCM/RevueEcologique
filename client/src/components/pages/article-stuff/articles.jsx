@@ -8,7 +8,7 @@ import api from "../../../api";
 class Articles extends Component {
   state = {
     articles: [],
-    pageSize: 4,
+    pageSize: 10,
     currentPage: 1,
     sortColumn: { path: "titre", order: "asc" },
     isLoading: false,

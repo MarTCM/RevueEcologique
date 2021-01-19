@@ -9,6 +9,7 @@ import Profile from "./components/user/profile";
 import ArticleForm from "./components/pages/article-stuff/articlePage";
 import Mobile from "./components/pages/mobile";
 import MyArticles from "./components/pages/article-stuff/myArticles";
+import NewArticle from "./components/pages/article-stuff/newArticle";
 
 function App() {
   const { isAuthenticated, user, loginWithRedirect } = useAuth0();
@@ -22,10 +23,23 @@ function App() {
               path="/myarticles"
               render={(props) => {
                 if (
-                  (isAuthenticated && user["https://rbac/role"] === "Auteur") ||
-                  "Admin"
+                  isAuthenticated &&
+                  (user["https://rbac/role"] === "Auteur" ||
+                    user["https://rbac/role"] === "Admin")
                 )
-                  <MyArticles {...props} user={user} />;
+                  return <MyArticles {...props} user={user} />;
+                return loginWithRedirect();
+              }}
+            />
+            <Route
+              path="/newarticle"
+              render={(props) => {
+                if (
+                  isAuthenticated &&
+                  (user["https://rbac/role"] === "Auteur" ||
+                    user["https://rbac/role"] === "Admin")
+                )
+                  return <NewArticle {...props} user={user} />;
                 return loginWithRedirect();
               }}
             />

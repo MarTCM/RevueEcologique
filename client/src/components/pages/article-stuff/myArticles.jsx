@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import _ from "lodash";
+import { confirmAlert } from "react-confirm-alert";
 import Pagination from "../../common/pagination/pagination";
 import { paginate } from "../../common/pagination/paginate";
 import api from "../../../api";
+import "react-confirm-alert/src/react-confirm-alert.css";
 
 class MyArticles extends Component {
   state = {
@@ -68,6 +70,13 @@ class MyArticles extends Component {
           }}
         >
           {this.state.noArticleMessage}
+          <Link
+            className="btn btn-primary"
+            to="/newarticle"
+            style={{ marginLeft: 10 }}
+          >
+            Ajouter un article
+          </Link>
         </p>
       );
     else if (this.state.myArticles.length === 0 && !this.state.noArticle) {
@@ -111,20 +120,34 @@ class MyArticles extends Component {
           alignItems: "center",
         }}
       >
-        <h3 className="m-3">
-          Affichage de {this.state.myArticles.length} articles.
-        </h3>
+        <div
+          style={{
+            display: "inline",
+          }}
+        >
+          <h3 style={{ marginRight: 50, float: "left" }}>
+            Affichage de {this.state.myArticles.length} articles.
+          </h3>
+          <Link
+            className="btn btn-primary"
+            to="/newarticle"
+            style={{ marginBottom: 15, float: "right" }}
+          >
+            Ajouter un article
+          </Link>
+        </div>
         <table className="table">
           <thead>
             <tr>
               <th>Titre</th>
               <th>Date de création</th>
               <th>Auteur</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
             {articles.map((article) => (
-              <tr>
+              <tr key={article._id}>
                 <td>
                   <Link to={`/articles/${article._id}`}>{article.titre}</Link>
                 </td>
@@ -132,6 +155,35 @@ class MyArticles extends Component {
                   {article.createdAt.substr(0, 10)}
                 </td>
                 <td style={{ paddingRight: 1 }}>{article.auteur}</td>
+                <td>
+                  <button
+                    className="btn btn-danger"
+                    onClick={async () => {
+                      confirmAlert({
+                        title: "Alerte",
+                        message:
+                          "Vous êtes sûr que vous voulez supprimer cet article?",
+                        buttons: [
+                          {
+                            label: "Oui",
+                            onClick: async () => {
+                              await api.deleteArticleById(article._id);
+                              window.location.reload();
+                              this.setState({
+                                myArticles: this.state.myArticles,
+                              });
+                            },
+                          },
+                          {
+                            label: "Non",
+                          },
+                        ],
+                      });
+                    }}
+                  >
+                    Delete
+                  </button>
+                </td>
               </tr>
             ))}
           </tbody>

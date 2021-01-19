@@ -80,3 +80,16 @@
 .shadow-1 {
   box-shadow: 3px 3px 20px 10px #ccc;
 }
+
+.wrapper-class {
+  padding: 1rem;
+  border: 1px solid #ccc;
+}
+.editor-class {
+  background-color: #edf0ee;
+  padding: 1rem;
+  border: 1px solid #ccc;
+}
+.toolbar-class {
+  border: 1px solid #ccc;
+}

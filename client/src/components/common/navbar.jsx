@@ -24,8 +24,8 @@ const Navbar = () => {
   const myArticles = () => {
     if (
       isAuthenticated &&
-      (user["https://rbac/role"] === "Admin" ||
-        user["https://rbac/role"] === "Auteur")
+      (user["https://rbac/role"] === "Auteur" ||
+        user["https://rbac/role"] === "Admin")
     ) {
       return (
         <Link
