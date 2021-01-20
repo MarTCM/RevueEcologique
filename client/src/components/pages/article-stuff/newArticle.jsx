@@ -15,7 +15,6 @@ const NewArticle = () => {
     setEditorState(state);
     convertContentToHTML();
   };
-
   let options = {
     entityStyleFn: (entity) => {
       const entityType = entity.get("type").toLowerCase();
@@ -33,7 +32,7 @@ const NewArticle = () => {
       }
     },
     inlineStyles: {
-      BOLD: { style: { fontSize: 24 } },
+      BOLD: { style: { fontSize: 35 } },
     },
   };
 

@@ -169,9 +169,6 @@ class MyArticles extends Component {
                             onClick: async () => {
                               await api.deleteArticleById(article._id);
                               window.location.reload();
-                              this.setState({
-                                myArticles: this.state.myArticles,
-                              });
                             },
                           },
                           {
