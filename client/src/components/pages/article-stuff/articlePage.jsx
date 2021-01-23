@@ -25,12 +25,13 @@ class ArticleForm extends Component {
       paragraphe: article.data.data.paragraphe,
       imgLink: article.data.data.imgLink,
       auteur: article.data.data.auteur,
+      pfp: article.data.data.pfp,
     });
 
-    this.pfp();
+    //this.pfp();
   };
 
-  pfp = () => {
+  /*pfp = () => {
     if (authors.some((e) => e.name === this.state.auteur)) {
       const author = authors.filter((e) => e.name === this.state.auteur);
       this.setState({ pfp: author[0].pfp });
@@ -40,7 +41,7 @@ class ArticleForm extends Component {
           "https://thumbs.dreamstime.com/b/default-avatar-profile-image-vector-social-media-user-icon-potrait-182347582.jpg",
       });
     }
-  };
+  };*/
 
   render() {
     return (
@@ -82,7 +83,9 @@ class ArticleForm extends Component {
             className="Lora-Regular"
             id="paragraphe"
             style={{ fontSize: 30, paddingRight: 90, paddingLeft: 100 }}
-            dangerouslySetInnerHTML={{ __html: atob(this.state.paragraphe) }}
+            dangerouslySetInnerHTML={{
+              __html: window.atob(this.state.paragraphe),
+            }}
           ></p>
         </div>
       </div>

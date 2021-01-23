@@ -7,6 +7,7 @@ const Article = new Schema(
     paragraphe: { type: [String], required: true },
     imgLink: { type: String, required: false },
     auteur: { type: String, required: true },
+    pfp: { type: String, required: true },
   },
   { timestamps: true }
 );

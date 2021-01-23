@@ -1,20 +1,52 @@
 import React, { useState } from "react";
 import { EditorState } from "draft-js";
 import { Editor } from "react-draft-wysiwyg";
-import { convertToHTML } from "draft-convert";
 import DOMPurify from "dompurify";
 import { stateToHTML } from "draft-js-export-html";
+import { htmlToBase64 } from "./htmlToBase64";
+import { useAuth0 } from "@auth0/auth0-react";
+import api from "../../../api";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
+
 const NewArticle = () => {
-  const [titre, setTitre] = useState(null);
+  const { user } = useAuth0();
+
+  const [titre, setTitre] = useState("");
+  const [imgLink, setImgLink] = useState("");
   const [editorState, setEditorState] = useState(() =>
     EditorState.createEmpty()
   );
-  const [convertedContent, setConvertedContent] = useState(null);
+  const [convertedContent, setConvertedContent] = useState("");
+
   const handleEditorChange = (state) => {
     setEditorState(state);
     convertContentToHTML();
   };
+
+  const handleTitleChange = ({ currentTarget: input }) => {
+    setTitre(input.value);
+  };
+
+  const handleImgLinkChange = ({ currentTarget: input }) => {
+    setImgLink(input.value);
+  };
+
+  const handleSubmit = async () => {
+    const payload = {
+      titre: titre,
+      paragraphe: btoa(convertedContent),
+      imgLink: imgLink,
+      pfp: user.picture,
+      auteur: user.name,
+    };
+
+    await api.insertArticle(payload).then((res) => {
+      window.alert(`Article inserted successfully`);
+      setTitre("");
+      setImgLink("");
+    });
+  };
+
   let options = {
     entityStyleFn: (entity) => {
       const entityType = entity.get("type").toLowerCase();
@@ -43,14 +75,40 @@ const NewArticle = () => {
     );
     setConvertedContent(currentContentAsHTML);
   };
+
   const createMarkup = (html) => {
     return {
       __html: DOMPurify.sanitize(html),
     };
   };
+
   return (
     <div>
-      <header style={{ fontSize: 22, paddingLeft: 10 }}>Nouveau Article</header>
+      <header style={{ fontSize: 22, paddingLeft: 10, paddingTop: 10 }}>
+        Nouveau Article
+      </header>
+      <hr />
+      <input
+        style={{ width: "35%", marginLeft: 20, marginBottom: 20 }}
+        autoFocus
+        placeholder="Titre"
+        value={titre}
+        onChange={handleTitleChange}
+        id="titre"
+        name="titre"
+        type="text"
+        className="form-control"
+      />
+      <input
+        style={{ width: "35%", marginLeft: 20, marginBottom: 20 }}
+        placeholder="Image de face"
+        value={imgLink}
+        onChange={handleImgLinkChange}
+        id="imgLink"
+        name="imgLink"
+        type="text"
+        className="form-control"
+      />
       <Editor
         editorState={editorState}
         onEditorStateChange={handleEditorChange}
@@ -58,17 +116,10 @@ const NewArticle = () => {
         editorClassName="editor-class"
         toolbarClassName="toolbar-class"
       />
-      <div
-        className="preview"
-        dangerouslySetInnerHTML={createMarkup(convertedContent)}
-      ></div>
       <button
         className="btn btn-primary"
-        style={{ marginLeft: 20 }}
-        onClick={() => {
-          const paragraph = btoa(convertedContent);
-          console.log(paragraph);
-        }}
+        onClick={handleSubmit}
+        style={{ marginLeft: 20, marginTop: 20 }}
       >
         Submit
       </button>
