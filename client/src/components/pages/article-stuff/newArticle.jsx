@@ -40,6 +40,8 @@ const NewArticle = () => {
       auteur: user.name,
     };
 
+    //console.log(payload.pfp);
+
     await api.insertArticle(payload).then((res) => {
       window.alert(`Article inserted successfully`);
       setTitre("");
