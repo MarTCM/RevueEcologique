@@ -56,7 +56,7 @@ const NewArticle = () => {
             src: data.src,
           },
           style: {
-            height: 450,
+            height: 410,
           },
         };
       }
