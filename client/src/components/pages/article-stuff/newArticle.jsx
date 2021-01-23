@@ -56,7 +56,7 @@ const NewArticle = () => {
             src: data.src,
           },
           style: {
-            width: 900,
+            height: 410,
           },
         };
       }
