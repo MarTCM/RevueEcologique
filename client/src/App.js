@@ -57,7 +57,6 @@ function App() {
               path="/profile"
               render={(props) => {
                 if (isAuthenticated) {
-                  console.log(user.app_metadata);
                   return <Profile {...props} />;
                 }
                 return loginWithRedirect();
