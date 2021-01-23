@@ -76,7 +76,7 @@ class ArticleForm extends Component {
             id="paragraphe"
             style={{ fontSize: 30, paddingRight: 90, paddingLeft: 100 }}
             dangerouslySetInnerHTML={{
-              __html: window.atob(this.state.paragraphe),
+              __html: this.state.paragraphe,
             }}
           ></p>
         </div>

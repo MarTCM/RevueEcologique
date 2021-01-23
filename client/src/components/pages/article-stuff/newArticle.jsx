@@ -32,7 +32,7 @@ const NewArticle = () => {
   const handleSubmit = async () => {
     const payload = {
       titre: titre,
-      paragraphe: btoa(convertedContent),
+      paragraphe: convertedContent,
       imgLink: imgLink,
       pfp: user.picture,
       auteur: user.name,
