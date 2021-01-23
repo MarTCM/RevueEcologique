@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import api from "../../../api";
-import { authors } from "./authors";
 
 class ArticleForm extends Component {
   constructor(props) {
@@ -28,20 +27,13 @@ class ArticleForm extends Component {
       pfp: article.data.data.pfp,
     });
 
-    //this.pfp();
-  };
-
-  /*pfp = () => {
-    if (authors.some((e) => e.name === this.state.auteur)) {
-      const author = authors.filter((e) => e.name === this.state.auteur);
-      this.setState({ pfp: author[0].pfp });
-    } else {
+    if (!this.state.pfp) {
       this.setState({
         pfp:
           "https://thumbs.dreamstime.com/b/default-avatar-profile-image-vector-social-media-user-icon-potrait-182347582.jpg",
       });
     }
-  };*/
+  };
 
   render() {
     return (

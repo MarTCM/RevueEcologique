@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { EditorState } from "draft-js";
 import { Editor } from "react-draft-wysiwyg";
-import DOMPurify from "dompurify";
 import { stateToHTML } from "draft-js-export-html";
-import { htmlToBase64 } from "./htmlToBase64";
 import { useAuth0 } from "@auth0/auth0-react";
 import api from "../../../api";
 import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
@@ -40,8 +38,6 @@ const NewArticle = () => {
       auteur: user.name,
     };
 
-    //console.log(payload.pfp);
-
     await api.insertArticle(payload).then((res) => {
       window.alert(`Article inserted successfully`);
       setTitre("");
@@ -76,12 +72,6 @@ const NewArticle = () => {
       options
     );
     setConvertedContent(currentContentAsHTML);
-  };
-
-  const createMarkup = (html) => {
-    return {
-      __html: DOMPurify.sanitize(html),
-    };
   };
 
   return (
